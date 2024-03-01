@@ -8,6 +8,9 @@
     <style>
 
         .preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
             height: 100vh;
             width: 100%;
             display: flex;
@@ -48,7 +51,7 @@
     <link rel="stylesheet" href="src/output.css">
 </head>
 
-<body class="dark:bg-slate-950">
+<body class="dark:bg-slate-950 overflow-hidden">
     <div class="preloader bg-slate-950">
         <div class="spinner">
             <img src="favicon2.PNG" alt="">
@@ -136,6 +139,7 @@
     <script src="assets/jQuery.js"></script>
     <script>
         $(document).ready(function () {
+            $('body').removeClass('overflow-hidden');
             $('.preloader').fadeOut(800);
         });
     </script>
