@@ -5,6 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumedha Dii</title>
+    <style>
+        .spinner {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: rotate 5s linear infinite;
+        }
+
+        .spinner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +41,11 @@
 </head>
 
 <body class="dark:bg-slate-950">
+    <div class="preloader fixed top-0 left-0 h-screen w-screen bg-slate-950 flex items-center justify-center">
+        <div class="spinner">
+            <img src="favicon2.PNG" alt="">
+        </div>
+    </div>
 
     <section class="text-gray-400 bg-gray-900 body-font">
         <div class="container px-5 pb-24 pt-10 mx-auto">
@@ -79,6 +111,22 @@
         </div>
     </section>
 
+    <script src="assets/jQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.preloader').fadeOut(800);
+        });
+    </script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    </script>
 </body>
 
 </html>
