@@ -31,6 +31,41 @@
                 transform: rotate(360deg);
             }
         }
+
+        .preview {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            object-fit: contain;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            padding: 1rem;
+        }
+
+        .preview img {
+            height: auto;
+            width: 100%;
+            /* Set the initial width */
+            max-width: 100%;
+            /* Ensure the image doesn't exceed its natural size */
+            touch-action: pinch-zoom;
+            /* Enable pinch-to-zoom on touch devices */
+        }
+
+        .preview .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            border: 1px solid red;
+            color: red;
+            margin: 20px;
+            font-size: 1.5rem;
+        }
     </style>
     <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +78,7 @@
 <body class="dark:bg-slate-950">
     <div class="preloader fixed top-0 left-0 h-screen w-screen bg-slate-950 flex items-center justify-center">
         <div class="spinner">
-            <img src="favicon2.PNG" alt="">
+            <img src="favicon2.PNG" alt="preload">
         </div>
     </div>
 
@@ -71,14 +106,21 @@
                             But have you seen your eyes my love
                             The sun melts for people likhe you💓
                         </p>
-                        <a class="inline-flex items-center">
-                            .preview
+                        <div class="inline-flex items-center">
+                            <div class="preview bg-slate-950 flex justify-center items-center" id="i1"
+                                style="display: none;">
+                                <div class="close flex justify-center items-center" data-target="#i1">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </div>
+                                <img src="assets/us/1.jpeg" alt="Khushuuu...">
+                            </div>
                             <img alt="testimonial" src="assets/us/1-t.jpeg"
-                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center img-dis"
+                                data-target="#i1">
                             <span class="flex-grow flex flex-col pl-4">
                                 <span class="title-font font-medium text-pink-500">KHUSHI</span>
                             </span>
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <div class="p-4 md:w-1/2 w-full">
@@ -98,7 +140,8 @@
                                 marriage! 💑</p>
                         </div>
                         <a class="inline-flex items-center">
-                            <img alt="testimonial" src="assets/us/2-t.jpeg" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                            <img alt="testimonial" src="assets/us/2-t.jpeg"
+                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
                             <span class="flex-grow flex flex-col pl-4">
                                 <span class="title-font font-medium text-pink-500">PIYUSH</span>
                             </span>
@@ -114,13 +157,15 @@
             </div>
         </div>
     </section>
-
     <script src="assets/jQuery.js"></script>
     <script>
         $(document).ready(function () {
             $('.preloader').fadeOut(800);
         });
     </script>
+    <script src="assets/gsap.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
     <script>
         const lenis = new Lenis();
@@ -128,8 +173,38 @@
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
-
         requestAnimationFrame(raf)
+    </script>
+    <script>
+        $('.close').click(function () {
+            let targetElem = $(this).data('target');
+
+            // Use GSAP for animation
+            gsap.to(targetElem, {
+                y: -50,
+                opacity: 0,
+                duration: 0.5,
+                onComplete: function () {
+                    $(targetElem).hide();
+                    $('body').removeClass('overflow-hidden');
+                }
+            });
+        })
+        $('.img-dis').click(function () {
+            $('body').addClass('overflow-hidden');
+            let targetElem = $(this).data('target');
+
+            // Hide the target element initially
+            $(targetElem).css({ opacity: 0, y: -20 }).show();
+
+            // Use GSAP for animation
+            gsap.to(targetElem, {
+                y: 0,
+                opacity: 1,
+                duration: 0.5
+            });
+        });
+
     </script>
 </body>
 
