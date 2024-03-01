@@ -42,10 +42,10 @@
             top: 0;
             left: 0;
             padding: 1rem;
+            transform: translate(0px, -50px);
         }
 
         .preview img {
-            height: auto;
             width: 100%;
             /* Set the initial width */
             max-width: 100%;
@@ -109,12 +109,12 @@
                         <div class="inline-flex items-center">
                             <div class="preview bg-slate-950 flex justify-center items-center" id="i1"
                                 style="display: none;">
-                                <div class="close flex justify-center items-center" data-target="#i1">
+                                <div class="close flex justify-center items-center" data-target="#i1" data-p-image="#pid2">
                                     <ion-icon name="close-outline"></ion-icon>
                                 </div>
                                 <img src="assets/us/1.jpeg" alt="Khushuuu...">
                             </div>
-                            <img alt="testimonial" src="assets/us/1-t.jpeg"
+                            <img alt="testimonial" src="assets/us/1-t.jpeg" id="pid2"
                                 class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center img-dis"
                                 data-target="#i1">
                             <span class="flex-grow flex flex-col pl-4">
@@ -139,13 +139,20 @@
                             <p class="text-base">Wishing you a lifetime of happiness and blissful moments in your
                                 marriage! 💑</p>
                         </div>
-                        <a class="inline-flex items-center">
-                            <img alt="testimonial" src="assets/us/2-t.jpeg"
-                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                        <div class="inline-flex items-center">
+                            <div class="preview bg-slate-950 flex justify-center items-center" id="i2"
+                                style="display: none;">
+                                <div class="close flex justify-center items-center" data-target="#i2" data-p-image="#pid2">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </div>
+                                <img src="assets/us/2.jpeg" alt="Khushuuu...">
+                            </div>
+                            <img alt="testimonial" src="assets/us/2-t.jpeg" id="pid2"
+                                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center img-dis" data-target="#i2">
                             <span class="flex-grow flex flex-col pl-4">
                                 <span class="title-font font-medium text-pink-500">PIYUSH</span>
                             </span>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,6 +184,7 @@
     </script>
     <script>
         $('.close').click(function () {
+            let targetPImg = $(this).data('p-image');
             let targetElem = $(this).data('target');
 
             // Use GSAP for animation
@@ -186,22 +194,28 @@
                 duration: 0.5,
                 onComplete: function () {
                     $(targetElem).hide();
-                    $('body').removeClass('overflow-hidden');
                 }
+            });
+            gsap.to(targetPImg, {
+                opacity: 1,
+                duration: 0.5
             });
         })
         $('.img-dis').click(function () {
-            $('body').addClass('overflow-hidden');
+            gsap.to($(this), {
+                opacity: 0,
+                duration: 0.5
+            });
             let targetElem = $(this).data('target');
 
             // Hide the target element initially
-            $(targetElem).css({ opacity: 0, y: -20 }).show();
+            $(targetElem).show();
 
             // Use GSAP for animation
             gsap.to(targetElem, {
                 y: 0,
                 opacity: 1,
-                duration: 0.5
+                duration: 0.8
             });
         });
 
