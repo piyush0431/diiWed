@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <title>Sumedha Dii</title>
     <style>
+        body {
+            user-select: none;
+        }
+
         .spinner {
             height: 100px;
             width: 100px;
@@ -64,10 +68,15 @@
     <section
         class="w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center text-yellow-300"
         id="cont">
-        <button class="bg-gradient-to-br from-pink-600 via-red-500 to-orange-500 px-5 py-3 rounded-md"
-            id="start-anim">Shuru
-            Karo</button>
+        <button class="bg-gradient-to-br from-pink-600 via-red-500 to-orange-500 px-5 py-3 rounded-md" id="start-anim">
+            Dii....Shuru Karo..😌🥰
+        </button>
         <p class="mb-4 thisispara splitit f-24" id="para-line"></p>
+        <a href="last.html" style="display: none;"
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white mb-5 bg-gradient-to-br from-blue-600 via-purple-500 to-pink-500 px-5 py-3 rounded-md"
+            id="last-page">
+            Dii...Click Me🥰
+        </a>
     </section>
 
 
@@ -91,220 +100,11 @@
         $(document).ready(function () {
             $('body').removeClass('overflow-hidden');
             $('.preloader').fadeOut(800);
-            var pianoAudio = $('#pianoAudio');
-            $('#pianoAudio').get(0).play();
         });
     </script>
+    <script src="assets/script.js"></script>
 
     <script>
-        let colorContrast = {
-            node1: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-pink-600 via-red-500 to-orange-500', clr: 'text-white' },
-            node2: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500', clr: 'text-white' },
-            node3: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-green-500 via-teal-500 to-cyan-500', clr: 'text-white' },
-            node4: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600', clr: 'text-black' },
-            node5: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-red-400 via-red-500 to-red-600', clr: 'text-white' },
-            node6: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500', clr: 'text-white' },
-            node7: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500', clr: 'text-white' },
-            node8: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700', clr: 'text-white' },
-            node9: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600', clr: 'text-white' },
-            node10: { bg: 'w-full h-full border-4 border-white rounded-lg p-8 font-sans text-center text-lg flex items-center justify-center bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600', clr: 'text-white' },
-        };
-
-        let arr_sent = [
-            "Dii, is safar mein aapki muskurahat rang laye, pyaar ka saathi banke. 😊",
-            "Aapke liye, har kadam pe pyaar bhara ho, taqat se bhi zyada. 💪",
-            "Dii, shaadi ki din mein, pyaar se bhara ho har pal. 💕",
-            "Shaadi ki taal mein, ek pyaara sa taara bano aap. 🌟",
-            "Jo rishta banega, woh rahega taqat se bhara, aur pyaar se bhi gehra. 💘",
-            "Dii, is prem kahani mein khilte raho pyaar ke phool, dil se bhara. 🌹",
-            "Dil ko chu jane wale palon ka samay aaya hai, Dii, aapki shadi ka. 🎉",
-            "Dii, is prem kahani mein odh lo pyaar bhari chaadar, aur gungunate raho. 🎶",
-            "aur ant mai ye kehna hai",
-            "One love, one heart, one destiny. 💖"
-        ];
-
-        const text = new SplitType('.splitit', { type: 'words' });
-
-        class Animations {
-            static anim01() {
-                gsap.timeline().from('.word', {
-                    x: -10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim02() {
-                gsap.timeline().from('.word', {
-                    x: 10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim03() {
-                gsap.timeline().from('.word', {
-                    x: -10,
-                    y: -10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim04() {
-                gsap.timeline().from('.word', {
-                    x: 10,
-                    y: 10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim05() {
-                gsap.timeline().from('.word', {
-                    y: -10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim06() {
-                gsap.timeline().from('.word', {
-                    y: 10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim07() {
-                gsap.timeline().from('.word', {
-                    x: 10,
-                    y: -10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-
-            static anim08() {
-                gsap.timeline().from('.word', {
-                    x: -10,
-                    y: 10,
-                    opacity: 0,
-                    duration: 0.3,
-                    stagger: 0.3
-                });
-            }
-        }
-
-
-        // Global variables
-        let sentenceIndex = 0; // Keep track of the current sentence index
-
-        // Function to get the sentence based on the current sentenceIndex
-        function getSequentialSentence() {
-            if (sentenceIndex < arr_sent.length) {
-                return arr_sent[sentenceIndex];
-            } else {
-                return "All sentences have been iterated.";
-            }
-        }
-
-        // Function to apply a random shuffle of colorContrast to the element #cont
-        function applyRandomColorContrast() {
-            const elementId = 'cont';
-            const randomNode = colorContrast['node' + (Math.floor(Math.random() * 10) + 1)];
-
-            // Apply the background and text color classes
-            $(`#${elementId}`).attr('class', randomNode.bg + ' ' + randomNode.clr);
-        }
-
-        // Function to apply a random animation from the Animations class
-        function applyRandomAnimation() {
-            const animationMethods = [
-                'anim01', 'anim02', 'anim03', 'anim04', 'anim05', 'anim06', 'anim07', 'anim08'
-            ];
-
-            const randomAnimation = animationMethods[Math.floor(Math.random() * animationMethods.length)];
-            Animations[randomAnimation]();
-        }
-
-        // Function to split a sentence using SplitType and apply GSAP animation
-        function splitSentenceAndAnimate(sentence) {
-            // Insert the sentence into the #para-line element
-            $('#para-line').html('<div id="text-split-container">' + sentence.split(' ').map(word => `<div class="word">${word}</div>`).join(' ') + '</div>');
-
-            // Apply a GSAP timeline for the animation
-            const timeline = gsap.timeline();
-
-            // Apply a random shuffle of colorContrast
-            applyRandomColorContrast();
-
-            // Apply a random animation
-            applyRandomAnimation();
-
-            // Select all the words inside the SplitType container
-            const textSplit = new SplitType("#text-split-container", { types: 'words', wordsClass: 'word' });
-
-            // Add an onComplete callback to the timeline
-            timeline.eventCallback('onComplete', function () {
-                // Increment the sentence index
-                sentenceIndex++;
-
-                // Check if all sentences are iterated
-                if (allSentencesIterated()) {
-                    createLinkButton();
-                } else {
-                    // Delay the next sentence change by 1 second
-                    setTimeout(generateSequentialContentAndCheck, 8000);
-                }
-            });
-        }
-
-        // Function to check if all sentences are iterated
-        function allSentencesIterated() {
-            return sentenceIndex >= arr_sent.length;
-        }
-
-        // Function to create a link button with Tailwind CSS classes
-        function createLinkButton() {
-            const linkButton = $('<a>', {
-                href: 'last.html', // Set the link href as needed
-                text: 'Next', // Set button text as needed
-                class: 'absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded mb-5'
-
-            });
-
-            // Append the link button to the #para-line element
-            $('#para-line').append(linkButton);
-        }
-
-        // Function to generate sequential content and check if all sentences are iterated
-        function generateSequentialContentAndCheck() {
-            // Check if all sentences are iterated
-            if (allSentencesIterated()) {
-                createLinkButton();
-                return; // Stop further execution if all sentences are iterated
-            }
-
-            // Get the sentence sequentially
-            const sequentialSentence = getSequentialSentence();
-
-            // Split the sentence using SplitType and apply GSAP animation
-            splitSentenceAndAnimate(sequentialSentence);
-        }
-
-
-        $('#start-anim').click(function () {
-            $(this).fadeOut(200);
-            generateSequentialContentAndCheck();
-        })
 
     </script>
 </body>
