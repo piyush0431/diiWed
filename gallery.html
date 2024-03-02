@@ -2,21 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <title>Sumedha Dii</title>
     <style>
-
-        .preloader {
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
         .spinner {
             height: 100px;
             width: 100px;
@@ -42,117 +31,146 @@
                 transform: rotate(360deg);
             }
         }
+
+        .card-img {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .card-img img {
+            width: 100%;
+        }
+
+        .swiper .swiper-wrapper .swiper-slide {
+            opacity: 0 !important;
+            /* Set initial opacity for all slides to 0 */
+            transition: opacity 0.3s ease-in-out;
+            /* Add smooth transition */
+        }
+
+        .swiper .swiper-wrapper .swiper-slide-active {
+            opacity: 1 !important;
+            /* Set full opacity for the active slide */
+        }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="src/output.css">
     <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Schoolbell&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="src/output.css">
 </head>
 
-<body class="dark:bg-slate-950 overflow-hidden">
-    <div class="preloader bg-slate-950">
+<body class="h-screen bg-slate-950 p-3">
+    <div class="preloader fixed top-0 left-0 h-screen w-screen bg-slate-950 flex items-center justify-center">
         <div class="spinner">
             <img src="favicon2.PNG" alt="">
         </div>
     </div>
 
-    <section class="text-gray-400 p-10 bg-gray-900 body-font">
-
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="grid gap-4 space-y-0">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img1.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img2.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img3.jpg" alt="">
+    <section class="h-full swiper sudii">
+        <div class="h-full swiper-wrapper">
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <div class="h-full bg-gradient-to-b from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"></div>
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img1.jpg" class="gal-trig rounded-md" alt="sumedhaDii-1">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img2.jpg" class="gal-trig rounded-md" alt="sumedhaDii-2">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img3.jpg" class="gal-trig rounded-md" alt="sumedhaDii-3">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img4.jpg" class="gal-trig rounded-md" alt="sumedhaDii-4">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img5.jpg" class="gal-trig rounded-md" alt="sumedhaDii-5">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img6.jpg" class="gal-trig rounded-md" alt="sumedhaDii-6">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img7.jpg" class="gal-trig rounded-md" alt="sumedhaDii-7">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img8.jpg" class="gal-trig rounded-md" alt="sumedhaDii-8">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img9.jpg" class="gal-trig rounded-md" alt="sumedhaDii-9">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img10.jpg" class="gal-trig rounded-md" alt="sumedhaDii-10">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img11.jpg" class="gal-trig rounded-md" alt="sumedhaDii-11">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img12.jpg" class="gal-trig rounded-md" alt="sumedhaDii-12">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img13.jpg" class="gal-trig rounded-md" alt="sumedhaDii-13">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img14.jpg" class="gal-trig rounded-md" alt="sumedhaDii-14">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img16.jpg" class="gal-trig rounded-md" alt="sumedhaDii-16">
+            </div>
+            <div class="swiper-slide h-full card-img rounded-md overflow-hidden">
+                <img src="sumedhaDii/img17.png" class="gal-trig rounded-md" alt="sumedhaDii-17">
+            </div>
+            <div class="swiper-slide h-full  rounded-md overflow-hidden">
+                <div class="h-full bg-gradient-to-r flex items-center justify-center from-indigo-500 via-purple-500 to-pink-500">
+                    <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Purple to Blue</button>
                 </div>
             </div>
-            <div class="grid gap-4 space-y-0">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img4.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img5.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img6.jpg" alt="">
-                </div>
-            </div>
-            <div class="grid gap-4 space-y-0">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img7.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img8.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img9.jpg" alt="">
-                </div>
-            </div>
-            <div class="grid gap-4 space-y-0">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img10.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img11.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img12.jpg" alt="">
-                </div>
-            </div>
-            <div class="grid gap-4 space-y-0">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img13.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img14.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img15.jpg" alt="">
-                </div>
-            </div>
-            <div class="grid gap-4 space-y-0">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img16.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="sumedhaDii/img17.jpg" alt="">
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-center mt-10">
-            <a href="letter.html"
-                class="cursor-pointer inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 active:bg-pink-400 rounded text-lg">
-                Next Memory 💚💛💗💟
-            </a>
-        </div>
         </div>
     </section>
 
+
+
+    <!-- Swiper JS -->
     <script src="assets/jQuery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+
     <script>
         $(document).ready(function () {
+            // Ensure Swiper initialization is within the document ready function
+
+            var swiper = new Swiper(".sudii", {
+                grabCursor: true,
+                effect: "creative",
+                creativeEffect: {
+                    prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                    },
+                    next: {
+                        translate: ["100%", 0, 0],
+                    },
+                },
+                // Enable progress tracking (optional for smoother transition)
+                watchSlidesProgress: true,
+            });
+
+            // Remove preloader and overflow class after the document is ready
             $('body').removeClass('overflow-hidden');
             $('.preloader').fadeOut(800);
         });
     </script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
     <script>
         const lenis = new Lenis();
         function raf(time) {
             lenis.raf(time)
-            requestAnimationFrame(raf)
+            requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
     </script>
-
 </body>
 
 </html>
