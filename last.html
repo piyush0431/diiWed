@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumedha Dii</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
         .spinner {
             height: 100px;
             width: 100px;
@@ -31,12 +32,54 @@
                 transform: rotate(360deg);
             }
         }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: radial-gradient(circle farthest-corner,
+                    hsl(320deg, 100%, 15%),
+                    hsl(320deg, 100%, 2%) 100%);
+            overscroll-behavior-x: none;
+            overscroll-behavior-y: none;
+        }
+
+        body {
+            font-family: "Dancing Script", cursive;
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 5rem !important;
+        }
+
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
     </style>
     <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Schoolbell&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="src/output.css">
 </head>
 
@@ -47,14 +90,15 @@
         </div>
     </div>
 
-    <p class="text-center text-white">Page under Construction....</p>
-    <p class="text-center text-white">Page will available tommorrow....</p>
+    <h1>Happy Wedding</h1>
 
     <script src="assets/jQuery.js"></script>
+    <script src="assets/confetti.js"></script>
     <script>
         $(document).ready(function () {
             $('.preloader').fadeOut(800);
         });
+        startConfetti();
     </script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
     <script>
